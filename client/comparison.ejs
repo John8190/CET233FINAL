@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- MATERIAL CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,1,0" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JS -->
+  <script type="module" src="/js/dom/DOM.js"></script>
+  <script defer src="/js/DOM/vehicle.js"></script>
+  <script defer src="/js/DOM/comparison.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <%- include('partials/aside'); -%>
+
+    <main>
+      <h1 class="main-header">Comparisons</h1>
+
+      <div class="insights">
+        <div id="vehicle-boxes">
+          <div class="behind-box">
+            <div class="box">
+              <div class="search">
+                <input class="search-input" placeholder="Search vehicle" id="search">
+                <span class="material-symbols-sharp search-vehicle-btn" onclick="changeVehicle()">
+                  search
+                </span>
+              </div>
+              <form>
+                <label for="vehicle-type"></label>
+              </form>
+              <h1 class="vehicle-title" id="vehicle-1-title"></h1>
+              <div class="vehicle-box">
+                <img class="vehicle-img" src="../../imgs/Electric Car 1.jpg" alt="" id="vehicle1">
+                <div class="details">
+                  <div class="vehicle-desc-header">
+                    <h3>PERFORMANCE</h3>
+                  </div>
+                  <div class="vehicle-desc-content">
+                    <p id="spec-1"></p>
+                    <p id="spec-2"></p>
+                    <p id="spec-3"></p>
+                    <p id="spec-4"></p>
+                    <p id="spec-5"></p>
+                    <p id="spec-6"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="behind-box">
+            <div class="box">
+              <div class="search">
+                <input class="search-input" placeholder="Search vehicle" id="search2">
+                <span class="material-symbols-sharp search-vehicle-btn" onclick="changeVehicle2()">
+                  search
+                </span>
+              </div>
+              </form>
+              <h1 class="vehicle-title" id="vehicle-2-title">Electric Vehicle 2</h1>
+              <div class="vehicle-box">
+                <img class="vehicle-img" src="../../imgs/Electric Motorbike 1.jpg" alt="" id="vehicle2">
+                <div class="details">
+                  <div class="vehicle-desc-header">
+                    <h3>PERFORMANCE</h3>
+                  </div>
+                  <div class="vehicle-desc-content">
+                    <p id="vehicle2-spec-1"></p>
+                    <p id="vehicle2-spec-2"></p>
+                    <p id="vehicle2-spec-3"></p>
+                    <p id="vehicle2-spec-4"></p>
+                    <p id="vehicle2-spec-5"></p>
+                    <p id="vehicle2-spec-6"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

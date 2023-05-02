@@ -1,0 +1,41 @@
+<div class="fixed-navbar">
+  <aside class="aside">
+    <div class="top">
+      <div class="logo">
+        <img src="./imgs/logo.png" alt="">
+      </div>
+
+      <div id="id-btn">
+        <span class="material-symbols-sharp open">
+          menu
+        </span>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <a id="nav-link" href="/" class="<% if (url === '/' ) { %>active<% } %>">
+        <span class="material-symbols-sharp">
+          dashboard
+        </span>
+
+        <h3 class="description">Dashboard</h3>
+      </a>
+
+      <a id="nav-link" href="/comparisons" class="<% if (url === '/comparisons' ) { %>active<% } %>">
+        <span class="material-symbols-sharp">
+          electric_car
+        </span>
+
+        <h3 class="description">Comparisons</h3>
+      </a>
+
+      <a href="/logout">
+        <span class="material-symbols-sharp">
+          logout
+        </span>
+
+        <h3 class="description">Logout</h3>
+      </a>
+    </div>
+  </aside>
+</div>
