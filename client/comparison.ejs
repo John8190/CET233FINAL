@@ -30,63 +30,77 @@
     <%- include('partials/aside'); -%>
 
     <main>
-      <h1 class="main-header">Comparisons</h1>
+      <div class="main-top">
+        <span class="material-symbols-sharp open">
+          menu
+        </span>
 
-      <div class="insights">
-        <div id="vehicle-boxes">
-          <div class="behind-box">
-            <div class="box">
-              <div class="search">
-                <input class="search-input" placeholder="Search vehicle" id="search">
-                <span class="material-symbols-sharp search-vehicle-btn" onclick="changeVehicle()">
-                  search
-                </span>
-              </div>
-              <form>
-                <label for="vehicle-type"></label>
-              </form>
-              <h1 class="vehicle-title" id="vehicle-1-title"></h1>
-              <div class="vehicle-box">
-                <img class="vehicle-img" src="../../imgs/Electric Car 1.jpg" alt="" id="vehicle1">
-                <div class="details">
-                  <div class="vehicle-desc-header">
-                    <h3>PERFORMANCE</h3>
-                  </div>
-                  <div class="vehicle-desc-content">
-                    <p id="spec-1"></p>
-                    <p id="spec-2"></p>
-                    <p id="spec-3"></p>
-                    <p id="spec-4"></p>
-                    <p id="spec-5"></p>
-                    <p id="spec-6"></p>
+        <a href="/">
+          <div class="main-top-logo">
+            <img src="./imgs/logo.png" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="main-content">
+        <h1 class="main-header">Comparisons</h1>
+
+        <div class="insights">
+          <div id="vehicle-boxes">
+            <div class="behind-box">
+              <div class="box">
+                <div class="search">
+                  <input class="search-input" placeholder="Search vehicle" id="search">
+                  <span class="material-symbols-sharp search-vehicle-btn" onclick="changeVehicle()">
+                    search
+                  </span>
+                </div>
+                <form>
+                  <label for="vehicle-type"></label>
+                </form>
+                <h1 class="vehicle-title" id="vehicle-1-title"></h1>
+                <div class="vehicle-box">
+                  <img class="vehicle-img" src="../../imgs/Electric Car 1.jpg" alt="" id="vehicle1">
+                  <div class="details">
+                    <div class="vehicle-desc-header">
+                      <h3>PERFORMANCE</h3>
+                    </div>
+                    <div class="vehicle-desc-content">
+                      <p id="spec-1"></p>
+                      <p id="spec-2"></p>
+                      <p id="spec-3"></p>
+                      <p id="spec-4"></p>
+                      <p id="spec-5"></p>
+                      <p id="spec-6"></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="behind-box">
-            <div class="box">
-              <div class="search">
-                <input class="search-input" placeholder="Search vehicle" id="search2">
-                <span class="material-symbols-sharp search-vehicle-btn" onclick="changeVehicle2()">
-                  search
-                </span>
-              </div>
-              </form>
-              <h1 class="vehicle-title" id="vehicle-2-title">Electric Vehicle 2</h1>
-              <div class="vehicle-box">
-                <img class="vehicle-img" src="../../imgs/Electric Motorbike 1.jpg" alt="" id="vehicle2">
-                <div class="details">
-                  <div class="vehicle-desc-header">
-                    <h3>PERFORMANCE</h3>
-                  </div>
-                  <div class="vehicle-desc-content">
-                    <p id="vehicle2-spec-1"></p>
-                    <p id="vehicle2-spec-2"></p>
-                    <p id="vehicle2-spec-3"></p>
-                    <p id="vehicle2-spec-4"></p>
-                    <p id="vehicle2-spec-5"></p>
-                    <p id="vehicle2-spec-6"></p>
+            <div class="behind-box">
+              <div class="box">
+                <div class="search">
+                  <input class="search-input" placeholder="Search vehicle" id="search2">
+                  <span class="material-symbols-sharp search-vehicle-btn" onclick="changeVehicle2()">
+                    search
+                  </span>
+                </div>
+                </form>
+                <h1 class="vehicle-title" id="vehicle-2-title">Electric Vehicle 2</h1>
+                <div class="vehicle-box">
+                  <img class="vehicle-img" src="../../imgs/Electric Motorbike 1.jpg" alt="" id="vehicle2">
+                  <div class="details">
+                    <div class="vehicle-desc-header">
+                      <h3>PERFORMANCE</h3>
+                    </div>
+                    <div class="vehicle-desc-content">
+                      <p id="vehicle2-spec-1"></p>
+                      <p id="vehicle2-spec-2"></p>
+                      <p id="vehicle2-spec-3"></p>
+                      <p id="vehicle2-spec-4"></p>
+                      <p id="vehicle2-spec-5"></p>
+                      <p id="vehicle2-spec-6"></p>
+                    </div>
                   </div>
                 </div>
               </div>

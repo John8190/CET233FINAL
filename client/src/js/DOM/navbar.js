@@ -1,5 +1,5 @@
 const burger = document.querySelector(".open");
-const sidebar = document.querySelector(".fixed-navbar");
+const sidebar = document.querySelector(".sidebar");
 const description = document.querySelectorAll(".description");
 
 burger.addEventListener("click", () => {

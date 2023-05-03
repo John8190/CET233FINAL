@@ -147,21 +147,7 @@ aside .logo {
   height: calc(11rem / 3);
 }
 
-aside .open {
-  cursor: pointer;
-  transition: all 300ms ease;
-}
-
-aside .open.close {
-  content: "close";
-  transform: rotate(180deg);
-}
-
 /* =================== SIDE BAR =================== */
-
-aside .open {
-  display: none;
-}
 
 aside .sidebar {
   background: white;
@@ -171,7 +157,7 @@ aside .sidebar {
   height: 86vh;
   position: relative;
   top: 1rem;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
 }
 
 aside .description {
@@ -181,7 +167,7 @@ aside .description {
 aside .sidebar a {
   display: flex;
   color: var(--color-info-dark);
-  border-radius: 10px 10px 0 10px;
+  border-radius: 0 10px 0 0;
   margin-left: 2rem;
   gap: 1rem;
   align-items: center;
@@ -210,7 +196,8 @@ aside .sidebar a.active {
 aside .sidebar a.active::before {
   content: "";
   width: 6px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0 10px 0 0;
+
   height: 100%;
   background: var(--color-primary);
 }
@@ -247,13 +234,21 @@ main {
   padding: 0 14rem;
 }
 
-main > .insights {
+main .main-top .open {
+  display: none;
+}
+
+.main-top-logo {
+  display: none;
+}
+
+main > div .insights {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   gap: 1.6rem;
 }
 
-main > .insights img {
+main > div .insights img {
   width: 100%;
 }
 
@@ -293,10 +288,10 @@ main > div .vehicle .top .details {
 
 main > div .vehicle .top .chartBox {
   grid-area: 2 / 1 / 4 / 5;
+  width: 100%;
 }
 
 main > div .vehicle .top img {
-  border-radius: 20px;
   width: 40rem;
   height: calc(40rem / 1.5);
 }
@@ -372,7 +367,6 @@ main > div .vehicle-card:hover h1 {
 .box {
   text-align: center;
   border-radius: 25px;
-  height: 100%;
   background: black;
 }
 
@@ -486,34 +480,24 @@ input[type="submit"] {
   align-items: center;
 }
 
-input[type="submit"] {
-  padding: 2.5px;
-  cursor: pointer;
-}
-
-input[type="number"] {
-  padding: 2.5px;
-  cursor: pointer;
-  width: 150px;
-}
-
 /* END CHART */
 
 /* ====================== MEDIA QUERIES ====================== */
 
 @media screen and (max-width: 430px) {
   .fixed-navbar {
-    position: fixed;
-    width: 5rem;
+    margin-top: 12%;
     transition: all 300ms ease;
   }
 
   aside {
-    height: 100%;
+    height: 0;
   }
 
   aside .sidebar {
     height: 80vh;
+    left: -200%;
+    transition: all 300ms ease;
   }
 
   aside .top {
@@ -524,56 +508,170 @@ input[type="number"] {
     display: none;
   }
 
-  aside .open {
-    display: block;
-    font-size: 32px;
-    margin-left: 5px;
-  }
-
-  aside .description {
-    display: none;
-    font-weight: 500;
-    transition: all 100ms ease-in;
-  }
-
-  .fixed-navbar.active {
-    width: 13rem;
+  aside .sidebar.active {
+    height: 80vh;
+    left: -4%;
   }
 
   aside .description.active {
     display: block;
   }
 
-  /* ============ MAIN ============*/
+  /* ============ MAIN ============ */
 
   main {
-    padding: 0 7em;
+    margin: 0;
+    padding: 0;
+  }
+
+  main .main-top {
+    position: fixed;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    left: 0;
+    margin: 0;
+    padding: 5% 0;
+    width: 100%;
+  }
+
+  main .main-top .open {
+    display: block;
+    font-size: 32px;
+    margin-left: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: all 300ms ease;
+  }
+
+  .main-top-logo {
+    display: block;
+    width: 9rem;
+    height: calc(9rem / 3);
+  }
+
+  main .main-top .open.close {
+    content: "close";
+    transform: rotate(180deg);
+  }
+
+  main .main-content {
+    margin: 50% 0 0;
   }
 
   main .main-header {
-    margin: 0 16vw;
+    text-align: center;
   }
 
-  main > .insights {
-    grid-template-columns: repeat(1, 9fr);
-  }
-
-  main > div .vehicle-card {
-    background: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    width: 20rem;
-    margin-top: 1rem;
-    box-shadow: var(--box-shadow);
-    transition: all 300ms ease;
+  main > div .insights {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   main > div .vehicle-card a h1 {
-    color: var(--color-dark);
-    text-align: center;
-    padding: 0.5rem;
-    border-radius: 50%;
     font-size: 1.5rem;
+  }
+
+  /* ============ VEHICLE ============ */
+
+  main > div .vehicle {
+    width: 95vw;
+    height: 100%;
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+  }
+
+  main > div .vehicle .top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main > div .vehicle .top .chartBox {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .lineChart #myChart {
+    height: 30vh !important;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main > div .vehicle .top img {
+    width: 100%;
+    height: 100%;
+  }
+
+  main > div .vehicle .top .details {
+    margin: 10px 0;
+  }
+
+  main > div .vehicle .top .details .vehicle-details {
+    margin: 25px 0;
+  }
+
+  main > div .vehicle .top .details .reportData {
+    margin: 25px 0;
+  }
+
+  main > div .vehicle .top .details .reportData .input {
+    display: block;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin: 0.4rem 0;
+    padding: 1rem 1.6rem;
+  }
+
+  main > div .vehicle .top .details .reportData .input-submit {
+    cursor: pointer;
+    background-color: #9fa4ac;
+    border-radius: 5px;
+    padding: 1rem 1rem;
     transition: all 300ms ease;
+  }
+
+  main > div .vehicle .top .details h1 {
+    font-size: 24px;
+  }
+
+  /* ============ COMPARISONS ============ */
+
+  #vehicle-boxes {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+  }
+
+  .behind-box {
+    background: black;
+    margin: 2%;
+    height: 100%;
+    border-radius: 25px;
+  }
+
+  .box {
+    text-align: center;
+    border-radius: 25px;
+    background: black;
+    margin: 20px;
+  }
+
+  .search {
+    margin: 10px auto;
+    padding: 0 3rem;
+  }
+
+  .vehicle-box .details {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .vehicle-img {
+    height: 100%;
   }
 }

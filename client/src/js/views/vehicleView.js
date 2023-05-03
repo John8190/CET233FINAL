@@ -48,13 +48,9 @@ class VehicleView extends View {
 									<input class="input-price-per-kwh" type="number" id="pricePerKwh" step="0.01"
 										placeholder="£/Kwh" min="0.25" max="0.60"></input>
 								</div>
-								<div class="input input-submit">
-									<input class="submit-report" type="submit" value="">
-									<span class="material-symbols-sharp">
+								<span class="submit-report input-submit material-symbols-sharp">
 										lab_profile
 									</span>
-									</input>
-								</div>
 							</div>
 						</div>
 					</div>
