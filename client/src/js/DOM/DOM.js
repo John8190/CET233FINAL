@@ -1,5 +1,5 @@
 const burger = document.querySelector(".open");
-const sidebar = document.querySelector(".sidebar");
+const sidebar = document.querySelector(".fixed-navbar");
 const description = document.querySelectorAll(".description");
 
 burger.addEventListener("click", () => {
@@ -13,6 +13,6 @@ burger.addEventListener("click", () => {
   sidebar.classList.toggle("active");
   setTimeout(
     () => description.forEach((i) => i.classList.toggle("active")),
-    10
+    50
   );
 });
