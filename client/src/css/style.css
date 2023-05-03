@@ -129,6 +129,11 @@ b {
   color: var(--color-warning);
 }
 
+.fixed-navbar {
+  position: fixed;
+  width: 13rem;
+}
+
 aside {
   height: 100%;
 }
@@ -141,13 +146,13 @@ aside .top {
 }
 
 aside .logo {
+  background-image: url(../imgs/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  gap: 0.8rem;
-}
-
-aside .logo img {
   width: 11rem;
   height: calc(11rem / 3);
+  gap: 0.8rem;
 }
 
 aside .open {
@@ -241,8 +246,13 @@ aside .sidebar .message-count {
 
 /*========= MAIN =========*/
 
+.space {
+  margin: 0 0.4rem 0 0;
+}
+
 main {
   margin: 1.4rem 0;
+  padding: 0 14rem;
 }
 
 main .date {
@@ -367,7 +377,6 @@ main > div .vehicle-card:hover h1 {
 #vehicle-boxes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   width: 80vw;
   height: 100%;
@@ -422,7 +431,7 @@ main > div .vehicle-card:hover h1 {
 
 .vehicle-img {
   height: 300px;
-  width: 500px;
+  width: 100%;
   object-fit: contain;
   border-radius: 25px;
 }

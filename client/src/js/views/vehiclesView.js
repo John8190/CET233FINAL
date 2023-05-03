@@ -24,23 +24,8 @@ class VehiclesView extends View {
     });
   }
 
-  reloadComparisonsPage() {
-    document.addEventListener("click", (e) => {
-      const target = e.target.closest("#nav-link");
-
-      console.log(target);
-
-      if (target) {
-        const targetAtt = target.getAttribute("href");
-
-        location.assign(targetAtt);
-        location.reload();
-      }
-    });
-  }
-
   _generateHeader() {
-    return `Vehicle list`;
+    return `Vehicle<span class="space"></span>list`;
   }
 
   _generateMarkup() {
